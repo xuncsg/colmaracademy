@@ -1,0 +1,314 @@
+/* import font from Google CDN */
+@import url('href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Source+Sans+Pro:wght@300;400&display=swap"');
+
+
+/* Reset CSS */
+/* Universal selector (*) targets every element (regardless tag, class, ID) */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* If pseudo class :root is used, :root takes priority over html element */
+/* When applied, font size of 5px takes priority over that of html */
+/* :root{ font-size: 5px; } */
+
+/* Here, html selector takes priority as root element over universal selector */
+html, body{
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: [full--start] 0.6fr [center--end center--start] 0.4fr [full--end];
+    grid-template-rows: repeat(6, min-content);
+}
+
+/** Start of Mobile Section **/
+/** *********************** **/
+
+/** 1A. Set up the NAVBAR for the MOBILE */
+
+.mobile-nav{
+    display: none;
+}
+
+/* if the width of screen is 640px, aka 40rem */
+@media screen and (max-width: 40rem ) {
+
+    .mobile-nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        grid-column: full--start / full--end;
+        height: 4rem;/*Per SPECIFICATIONS*/
+    }
+
+    .desktop-nav{
+        display: none;
+    }
+
+    .container{
+        /*max-width: 100dvw;*/
+        /* display: grid; */
+        /* grid-template-columns: 1fr; */
+        display: flex; /*!! ADDED*/
+        flex-direction: column; /*!! ADDED*/
+        height: 100%; /*!! ADDED*/
+    }
+
+    /*2. Set up HEADER SECTION for the MOBILE */
+
+    .header-picture img{
+        padding: 0;
+        width: 100%;                /* !! ADDED */
+        object-fit: cover;          /* !! ADDED: Ensures the image covers the entire space without distortion */
+    }
+
+    .header-content{
+        /* display: flex;                               /* !! REMOVED */
+        /*grid-column: full--start / full--end;*/       /* !! REMOVED */
+
+        display: flex;                              /* !! ADDED */
+        flex-direction: column;                     /* !! ADDED */
+        flex-grow: 1;                               /* !! ADDED */
+        padding: 2rem 1rem 2rem 1rem;/*Per SPECIFICATIONS*/
+    }
+
+    .header-content div h1{
+        font-size: xx-large;
+        padding: 0 0 2rem 0;/*Per SPECIFICATIONS*/
+    }
+
+    .header-content div h2{
+        font-size: larger;
+        padding: 0 0 1.5rem 0; 
+    }
+
+    .header-content div{
+        display: block;
+        width: 100%;
+    }
+    
+    .header-content div a:link{
+        display: block;
+        width: 100%;
+        align-self: stretch;
+        background-color: rgb(72, 72, 72, 0.5);
+        color: #fff;
+        font-size: 1.2rem;/*Note that this is visually close to the spec*/
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    /* HOVER effect for call to action link */
+    .header-content div a:hover{
+        background-color: #484848;
+    }
+    
+    .header-content div a:visited, 
+    .header-content div a:active{
+        color: #fff;
+        text-decoration: none;
+        background-color: rgb(72, 72, 72, 0.5);
+    }
+}
+
+    /**3. Set up PRACTICE SECTION for the MOBILE */
+
+    /** Hide DESKTOP VERSION of PRACTICE**/
+
+       /* if the width of screen is 640px, aka 40rem */
+   @media screen and (max-width: 40rem ) {
+
+    .practice{
+        display: none;
+    }
+
+    .events{
+        display: none;
+    }
+
+    .events-block{
+        display: none;
+    }
+
+     /** Add MOBILE VERSION of PRACTICE**/
+
+    .events-mobile{
+        display: grid;
+        border-bottom: solid 1px #484848;
+        padding: 1rem 1rem 0 1rem ;/*!!Per Specifications*/
+    }    
+    
+    .event-block-mobile img{
+        display:grid;
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+
+    .event-block-mobile:hover{
+        transition: 0.45s ease-out;
+        transform: scale(1.01);
+    }
+
+    .event-block-mobile-content{
+        margin-bottom: 2rem;/*!!Per Specifications*/
+    }
+
+    .event-block-mobile-content h3{
+        padding: 1rem 0 0 1rem;/* !! Targeting make mobile h3 text more closer to spec visual  */
+        color: #484848
+       
+    }
+
+    .event-block-mobile-content p{
+        padding: 0.8rem 0 0.5rem 1rem;/* !! Targeting make mobile h3 text more closer to spec visual  */
+        color: #484848
+    }
+
+    /*FOR READ MORE*/
+
+    .event-block-mobile-content a:link{
+        padding: 0 0 0.5rem 1rem;
+        color: #6c8fef;
+        text-decoration: none;
+    }
+    
+    .event-block-mobile-content a:visited, 
+    .event-block-mobile-content a:active{
+        color: #6c8fef;
+        text-decoration: none;
+    }
+ 
+
+   /* if the width of screen is 640px, aka 40rem */
+   @media screen and (max-width: 40rem ) {
+    /** Hide DESKTOP VERSION of LEARNING**/
+
+    .learning-head{
+        display:none;
+    }
+
+    .course{
+        display:none;
+    }
+
+
+
+    /** Add MOBILE VERSION of LEARNING**/
+
+   .learning-mobile{
+        display: grid;
+        justify-content: center;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        background-color: #ffffff;/* !! To make mobile blocks render in white  */
+   }
+
+   .learning-mobile h1{
+        display: block;
+        color: #484848;
+        font-size: 2rem;/*Note that this is visually close to the spec*/
+   }
+   
+   .courses-mobile{
+        display: block;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom:2rem;
+        background-color: #ffffff;/* !! To make mobile blocks render in white  */
+        border-bottom: solid  1px #e7e7e7;
+   }
+
+   .courses-mobile-block:hover {
+    transition: 0.45s ease-out;
+    transform: scale(1.02);
+}
+
+   .courses-mobile-block{
+        background-color: #e7e7e7;
+        justify-content: center;
+        margin:0.5rem 0;/* !!Per Specifications*/
+        padding: 1rem 1rem 2rem 1rem;/* !!Per Specifications*/
+   }
+
+   .courses-mobile-block p{
+        text-align: left;
+        justify-content:space-between;
+        font-size: 1.5rem;/*Note that this is visually close to the spec*/
+        font-weight: bold;
+        color: #484848;
+   }
+
+
+}
+
+   /**5. Set up THESIS SECTION for the MOBILE */
+
+    /** Hide DESKTOP VERSION of THESIS**/
+
+   /* if the width of screen is 640px, aka 40rem */
+   @media screen and (max-width: 40rem ) {
+
+    .thesis-head{
+        display: none;
+    }
+
+    .thesis{
+        display:none;
+    }
+
+    .study{
+        display:none;
+    }
+
+}
+
+ /** Add MOBILE VERSION of THESIS**/
+
+    .thesis-mobile{
+        display: grid;
+        justify-content: center;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        background-color: #ffffff;/* !! To make mobile blocks render in white  */
+   }
+
+   .thesis-mobile h1{
+        color: #484848;
+        font-size: 2rem;/*Note that this is visually close to the spec*/
+   }
+
+   .thesis-video .video-mobile{
+    display: flex;                              /* !! ADDED */
+        flex-direction: column;                     /* !! ADDED */
+        flex-grow: 1;     
+        margin-bottom: 24px;/* !!Per Specifications*/     
+        border-bottom: solid  1px #e7e7e7;                  
+   }
+   }
+
+   /*6. Set up FOOTER SECTION for the MOBILE */
+
+  /** Hide DESKTOP VERSION of FOOTER**/
+
+   /* if the width of screen is 640px, aka 40rem */
+   @media screen and (max-width: 40rem ) {
+    
+    footer p{
+        padding-top: 16px; /* !!Per Specifications*/    
+        padding-bottom: 16px;  
+    }
+    footer ul{
+        display: none;
+    }
+
+   }
+  
+
+/* *********************** */
+/** End of Mobile Section */

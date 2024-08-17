@@ -1,0 +1,487 @@
+/* import font from Google CDN */
+@import url('href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Source+Sans+Pro:wght@300;400&display=swap"');
+
+
+/* Reset CSS */
+/* Universal selector (*) targets every element (regardless tag, class, ID) */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* If pseudo class :root is used, :root takes priority over html element */
+/* When applied, font size of 5px takes priority over that of html */
+/* :root{ font-size: 5px; } */
+
+/* Here, html selector takes priority as root element over universal selector */
+html, body{
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: [full--start] 0.6fr [center--end center--start] 0.4fr [full--end];
+    grid-template-rows: repeat(6, min-content);
+}
+
+/** Start of DESKTOP Section **/
+/** ************************ **/
+
+/* 1. Set up the NAVBAR for the DESKTOP */
+.desktop-nav{
+    grid-column: full--start / full--end;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;/*Per SPECIFICATIONS*/
+}
+
+.desktop-nav > a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Set up logo styles */
+.logo{
+    height: 3rem; /*Note that this is visually close to the spec, assume the 32px spec is for the text*/
+    width: auto;
+    padding-left: 1.5rem;/*Per SPECIFICATIONS*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-name{
+    font-size: 1.5rem;/*Note that this is visually close to the spec, assume the 32px spec is for the text*/
+    text-transform: uppercase;    
+}
+
+.logo-name-bold{
+    font-weight: bold;
+    color: #484848;
+}
+
+.logo-name-thin{
+    font-weight: 400;
+    color: #aaa;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+}
+
+/* Set up navigation links' styles */
+.nav-link{
+    display: inline-block;
+    text-decoration: none;
+    color: #828282;
+    font-size: 1rem;
+}
+
+.nav-item:not(:last-child){
+    margin-right: 1rem;
+}
+
+.nav-item:last-child{
+    margin-right: 1.5rem;
+}
+
+
+/*2. Set up HEADER SECTION */
+.header-picture{
+    background-color: #c8c8c8;
+    display: flex;
+}
+
+.header-picture img{
+    width: 93.5%;/*Note that this is visually close to the spec*/
+    height: auto;
+    padding: 2rem 0 2rem 1.5rem;
+}
+
+.header-content{
+    background-color: #c8c8c8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1.5rem 2rem 1.5rem;/*Per SPECIFICATIONS*/
+}
+
+.header-content div h1{
+    font-size: xx-large;/*Note that this is visually close to the spec*/
+    font-weight: bolder;
+    color: #484848;
+}
+
+.header-content div h2{
+    font-size: 1rem;
+    font-weight: 600;/*Note that this is visually close to the spec*/
+    color: #484848;
+    padding: 1rem 0;
+}
+
+.header-content div{
+    display: block;
+    width: 70%;/*Note that this is visually close to the spec*/
+}
+
+.header-content div a:link{
+    display: block;
+    width: 100%;
+    align-self: stretch;
+    margin: 1rem auto;
+    padding: 0.5rem 0;/*Per SPECIFICATIONS*/
+    background-color: #484848;
+    color: #fff;
+    font-size: 0.9rem;/*Note that this is visually close to the spec*/
+    font-weight: 400;/*Note that this is visually close to the spec*/
+    text-decoration: none;
+    text-align: center;
+}
+
+/* HOVER effect for call to action (BUTTON) link */
+.header-content div a:hover{
+    background-color: rgb(72, 72, 72, 0.5);
+}
+
+.header-content div a:visited, 
+.header-content div a:active{
+    color: #fff;
+    text-decoration: none;
+    background-color: #484848;
+}
+
+/*3. Set up PRACTICE section */
+
+/**PRACTICE (Left CSS Components)*/
+
+.practice{
+    background-color: #f0f0f0;
+    padding: 2rem 1.5rem;
+}
+
+.practice img{
+    width: 100%;/*Note that this is visually close to the spec and LINES UP with .header-picture*/
+    height: auto;
+}
+
+.practice h2{
+    padding: 2rem 0 1.5rem 0;/**!Per SPECIFICATIONS*/
+    color: #484848;
+}
+
+.practice p{
+    font-size: medium;/*Note that this is visually close to the spec and LINES UP with .header-picture*/
+    color: #484848;
+}
+
+.quote-name{
+    display: block;/*Note that this is visually close to the spec and LINES UP with .header-picture*/
+    padding: 2rem 0 2rem 0; /**!Per SPECIFICATIONS*/
+}
+
+/** (RIGHT CSS Components)*/
+.events{
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    border-left: 1px solid #e7e7e7;
+    background-color: #f0f0f0;
+    padding-top: 1rem;
+}
+
+.event-block{
+    display: grid;
+    grid-template-columns: [full--start] 0.35fr [center--end center--start] 0.65fr [full--end];/**!Per SPECIFICATIONS**/
+    align-items: center;
+    font-size: medium;
+    border-bottom: 1px solid #e7e7e7;
+    color: #484848;;
+}
+
+.event-block img{
+    width: 100%;
+    height: auto;
+    padding: 1rem;/**!Per SPECIFICATIONS**/
+}
+
+.event-block-content{
+    margin: 0 2rem;
+}
+
+.event-block-content h3{
+    font-size: 1rem;
+}
+
+.event-block-content p{
+    font-size: 0.8rem;
+    padding: 0.25rem 0;
+}
+
+.event-block-content a:link{
+    color: #6c8fef;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.event-block-content a:visited, 
+.event-block-content a:active{
+    color: #6c8fef;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.event-block:last-child{
+	background-color:#cecbcb;
+}
+
+.event-block:hover{
+    transition: 0.45s ease-out;
+    transform: scale(1.02);    
+}
+
+/*For removing events mobile while in DESKTOP mode*/
+
+.events-mobile{
+    display:none
+}
+
+/** ********************** **/
+/** End of Desktop Section **/
+
+
+/**4. Set up START LEARNING section for DESKTOP **/
+
+/*Hide Learning Mobile*/
+
+.learning-mobile h1{
+    display:none;
+}
+
+.courses-mobile {
+    display:none;
+}
+
+ /** Add DESKTOP VERSION of LEARNING**/
+
+.learning-head{
+    display: grid;
+    grid-column: full--start / full--end;
+    justify-content: center;
+    padding: 2rem 0 2rem 0 ; /**!Per SPECIFICATIONS*/
+    background-color: #e7e7e7
+}
+
+.learning-head h1{
+    display: flex; /***Responsive Design*/
+    color: #484848;
+}
+
+/** COURSES**/
+
+.course{
+    display: grid;
+    grid-column: full--start / full--end;
+    height: auto;  
+    background-color: #e7e7e7;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 2rem;/**!Per SPECIFICATIONS*/
+}
+
+.coursecontainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.coursecard{
+    display:grid;
+    margin-bottom: 2rem;/**!Per SPECIFICATIONS*/
+    margin-right: 2rem;
+    background-color: #fff;
+}
+
+.coursecard:hover {
+    transition: 0.45s ease-out;
+    transform: scale(1.02);
+}
+
+.coursecard img{
+    display: grid;
+    height: auto;
+    width: 100%;
+    background-color: #fff;
+}
+
+.coursecard h3{ 
+    padding: 1rem 0 1rem 1rem;/**!Per SPECIFICATIONS*/
+    color: #484848;
+}
+
+
+.coursecard p{ 
+    padding: 0.5rem 0 0.5rem 1rem;/**!Per SPECIFICATIONS*/
+    color: #484848;
+    font-weight: 400;
+}
+
+.coursecard .altp {  
+    padding: 0.5rem 1rem 1.5rem 1rem;/**!Per SPECIFICATIONS*/
+    color: #484848;
+}
+
+
+/** ********************** **/
+/** End of LEARNING Section **/
+
+/**5. Set up THESIS EXBHIT section **/
+/** ********************** **/
+
+/**THESIS EXBHIT**/
+/** ********************** **/
+
+/*Hide Thesis Mobile*/
+
+.thesis-mobile{
+    display:none;
+}
+
+.video-mobile{
+    display:none;
+}
+
+.thesis-head{
+    display: grid;
+    grid-column: full--start / full--end;
+    justify-content: center;
+    padding: 2rem 0 2rem 0 ; /**!Per SPECIFICATIONS*/
+    background-color: #f0f0f0 
+}
+.thesis-head h1{
+    display: flex; /***Responsive Design*/
+    color: #484848;
+}
+
+/**THESIS (LEFT CSS Components)**/
+
+.thesis{
+    background-color: #f0f0f0;
+    padding: 0 1.5rem 1.5rem 1.5rem;/**!Per SPECIFICATIONS*/
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.thesis img{
+    max-width: 100%;/*Note that this is visually close to the spec and LINES UP with .header-picture*/
+    height: auto;
+
+}
+
+.thesis h2{
+    padding: 1.5rem 0 0.5rem 0;/**!Per SPECIFICATIONS**/
+    color: #484848;
+}
+
+.thesis p{
+    font-size: medium;
+    padding-bottom: 2rem;/**!Per SPECIFICATIONS**/
+    color: #484848;
+}
+
+/**COURSES (RIGHT CSS COMPONENTS**/
+
+.study{
+    background-color: #f0f0f0;
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+}
+
+.study-block{
+    display: grid;
+    grid-template-columns: [full--start] 0.35fr [center--end center--start] 0.65fr [full--end];/**!Per SPECIFICATIONS**/
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;
+    font-size: medium;
+    color: #484848;
+}
+
+.study-block:hover{
+    transition: 0.45s ease-out;
+    transform: scale(1.02);    
+}
+
+.study-block img{
+    width: 100%;
+    height: auto;
+    padding: 1rem;/**!Per SPECIFICATIONS**/
+}
+
+.study-block-content{
+    margin: 0 2rem;
+}
+
+.study-block-content h3{
+    font-size: 1rem;
+}
+
+.study-block-content p{
+    font-size: 0.8rem;
+    padding: 0.25rem 0;
+}
+
+.study-block:first-child{
+	background-color:#cecbcb;
+}
+
+/*6. Set up FOOTER section */
+
+/** Hide events mobile **/
+.events-mobile{
+    display: none;
+}
+
+footer{
+    display: flex;
+    grid-column: full--start / full--end;
+    font-size: 0.8rem;
+    color: #303646;
+    padding: 1rem 0 1.5rem 1.5rem;
+}
+
+footer p{
+    margin-right: auto;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    padding-right: 1.5rem;
+}
+
+footer ul li:not(:last-child){
+    margin-right: 1rem;
+}
+
+footer a:link{
+    text-decoration: none;
+    color: #303646;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: rgba(131, 131, 131, 0.5);
+}
+
+footer a:active,
+footer a:visited{
+    text-decoration: none;
+    color: #303646;
+}
+
+ 
+/** ********************** **/
+/** End of Desktop Section **/
+
